@@ -1,0 +1,22 @@
+﻿<Page x:Class="Konfigurator.Pages.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Konfigurator.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InfoPage">
+
+    <Grid Background="White">
+        <ListView x:Name="softwareListView" MouseDoubleClick="SoftwareListView_MouseDoubleClick">
+        <ListView.View>
+            <GridView>
+                    <GridViewColumn Header="Программа" DisplayMemberBinding="{Binding Software.SoftwareName}" />
+                    <GridViewColumn Header="Программа" DisplayMemberBinding="{Binding Positions.PositionName}" />
+                <!-- Добавьте другие колонки, если необходимо -->
+            </GridView>
+        </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

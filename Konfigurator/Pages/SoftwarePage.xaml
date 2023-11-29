@@ -1,0 +1,41 @@
+﻿<Page x:Class="Konfigurator.Pages.SoftwarePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Konfigurator.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SoftwarePage">
+
+    <Grid Background="White">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,391"  >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Поиск: " Width="175" FontSize="36" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF06B1F9" Offset="0"/>
+                            <GradientStop Color="#FF7AFF11" Offset="1"/>
+                            <GradientStop Color="#FF05B300" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground></TextBlock>
+                <TextBox Width="369" Name="TboxSerch" TextChanged="Tbox_Search" Height="54" FontSize="20"></TextBox>
+            </StackPanel>
+        </WrapPanel>
+        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="288"  BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="24" FontFamily="Courier New" Margin="10,105,10,0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Программа">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SoftwareName}" TextWrapping="Wrap"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Перечень ролей" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="254,64,0,0"/>
+        <Button Content="Добавить новую программу" Click="Add_Soft_Click" HorizontalAlignment="Left" Margin="308,414,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
