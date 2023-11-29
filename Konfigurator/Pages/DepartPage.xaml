@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      d:Height="800" d:Width="1100"
+      d:Height="1000" d:Width="1100"
       Title="DepartPage">
 
     <Grid Background="White">

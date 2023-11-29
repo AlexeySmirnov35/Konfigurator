@@ -88,20 +88,20 @@ namespace Konfigurator.Pages
         private void Create_Req_Click(object sender, RoutedEventArgs e)
         {
 
-       /*  StringBuilder errors = new StringBuilder();
+      StringBuilder errors = new StringBuilder();
            
-            if (string.IsNullOrWhiteSpace(_requests.Description))
+            if (string.IsNullOrWhiteSpace(tbDesc.Text))
                 errors.AppendLine("Напишите описание!");
-            if (_requests.DepartmentID == null)
-                errors.AppendLine("Укажите категорию зверька!");
-            if (_requests.PositionID == null)
-                errors.AppendLine("Укажите категорию массу!");
+            if (cbDepar == null)
+                errors.AppendLine("Укажите подразделения");
+            if (cbPosir == null)
+                errors.AppendLine("Укажите должность!");
             
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
-            }*/
+            }
            
             if (_requests.RequestID == 0)
             {

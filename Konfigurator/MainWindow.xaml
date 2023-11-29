@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konfigurator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="1000" Width="1100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="FramMain" Content=""/>
     </Grid>
