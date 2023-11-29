@@ -130,6 +130,11 @@ namespace Konfigurator.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
     

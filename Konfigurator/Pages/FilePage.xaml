@@ -5,12 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:Height="800" d:Width="1100"
       Title="FilePage">
 
     <Grid Background="White">
 
-        <ListView x:Name="listview" Margin="10,10,637,10" FontFamily="Courier New" FontSize="20">
+        <ListView x:Name="listview" Margin="10,10,576,10" FontFamily="Courier New" FontSize="24">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="File" DisplayMemberBinding="{Binding FileName}"/>
@@ -18,10 +18,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Выбрать файл" Click="Btn_AddFile_Click" HorizontalAlignment="Left" Margin="392,265,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="20" Height="34" Width="222"/>
-        <TextBox IsReadOnly="True" x:Name="tbContent" HorizontalAlignment="Left" Margin="395,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="219" FontFamily="Courier New" FontSize="20" Height="42"/>
-        <TextBlock HorizontalAlignment="Left" Margin="680,30,0,0" TextWrapping="Wrap" Text="Файлы" VerticalAlignment="Top" FontFamily="Courier New" FontSize="20"/>
-        <Button Content="Сохранить" Click="Btn_SaveFile_Click" HorizontalAlignment="Left" Margin="393,310,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="20" Height="37" Width="222"/>
+        <Button Content="Выбрать файл" Click="Btn_AddFile_Click" HorizontalAlignment="Left" Margin="536,418,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" Height="62" Width="295"/>
+        <TextBox IsReadOnly="True" x:Name="tbContent" HorizontalAlignment="Left" Margin="535,346,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="551" FontFamily="Courier New" FontSize="36" Height="61"/>
+        <TextBlock HorizontalAlignment="Left" Margin="567,178,0,0" TextWrapping="Wrap" Text="Добавление/ редактирование файлов" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" TextAlignment="Center" Width="490"/>
+        <Button Content="Сохранить" Click="Btn_SaveFile_Click" HorizontalAlignment="Left" Margin="835,418,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" Height="62" Width="255"/>
+        <Button Content="Назад" Click="Btn_GoBack_Click" HorizontalAlignment="Left" Margin="854,735,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" Height="56" Width="234"/>
+        <TextBlock HorizontalAlignment="Left" Margin="451,311,0,0" TextWrapping="Wrap" Text="Название файла:" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" TextAlignment="Center" Width="490"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="*Для редактирование нажмите на строку,которую хотите отредактировать" HorizontalAlignment="Left" Margin="526,574,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontStyle="Italic" Height="137" Width="556"/>
+        <TextBlock HorizontalAlignment="Left" Margin="564,10,0,0" TextWrapping="Wrap" Text="Перечень файлов" VerticalAlignment="Top" FontFamily="Courier New" FontSize="48" TextAlignment="Center" Width="490" FontWeight="Bold" FontStyle="Italic"/>
 
     </Grid>
 </Page>

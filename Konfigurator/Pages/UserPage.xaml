@@ -5,14 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:Height="800" d:Width="1100"
       Title="UserPage" >
 
     <Grid Background="White">
-        <Label Content="Панель пользователя" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Courier New"/>
-        <Button Content="База знаний" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" Height="79" Width="254" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" HorizontalAlignment="Center" Margin="0,313,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Создать заявку" Click="Btn_AddRequest"  HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
+        <Label Content="Панель пользователя" HorizontalAlignment="Left" Margin="276,210,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Courier New"/>
+        <Button Content="База знаний" HorizontalAlignment="Left" Margin="426,409,0,0" VerticalAlignment="Top" Height="79" Width="254" FontSize="24" FontFamily="Courier New"/>
+        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" HorizontalAlignment="Left" Margin="426,513,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
+        <Button Content="Создать заявку" Click="Btn_AddRequest"  HorizontalAlignment="Left" Margin="426,306,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
+        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="428,594,0,0" VerticalAlignment="Top" Width="250" FontFamily="Courier New" Height="77"/>
 
     </Grid>
 </Page>

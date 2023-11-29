@@ -5,22 +5,139 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:Height="800" d:Width="1100"
       Title="EditPageInformation">
 
-    <Grid Background="White">
-        <TextBox x:Name="tbPosi"  HorizontalAlignment="Left" IsReadOnly="True" Margin="12,98,0,0" TextWrapping="Wrap" Text="{Binding Positions.PositionName}" VerticalAlignment="Top" FontSize="24" Width="327" FontFamily="Courier New" Height="50"/>
-        <ComboBox x:Name="cbAllProg" SelectedItem="{Binding Software}" DisplayMemberPath="SoftwareName"  HorizontalAlignment="Left" Margin="374,214,0,0" VerticalAlignment="Top" Width="399" TextBlock.FontSize="24" FontSize="24" FontFamily="Courier New" Height="35"/>
-        <TextBox x:Name="tbVProg" IsReadOnly="True" HorizontalAlignment="Left" Margin="374,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="399" FontFamily="Courier New" Height="50"/>
-        <Button Content="Сохранить изменения" Click="Btn_Edit_Click" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" Height="62" Width="347"/>
-        <ComboBox x:Name="cbLinc" SelectedItem="{Binding LicenseInfo}" DisplayMemberPath="LicenseInfo"  HorizontalAlignment="Left" Margin="8,214,0,0" VerticalAlignment="Top" Width="328" TextBlock.FontSize="24" FontSize="24" FontFamily="Courier New" Height="35
-                  "/>
-        <Label Content="Вы выбрали должность:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New"/>
-        <TextBlock Text="Выберите программу, на которую хотите заменить" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="374,155,0,0" VerticalAlignment="Top" Height="51" Width="338" FontSize="24" FontFamily="Courier New"/>
-        <TextBlock Text="Выберите необходимость лицензии" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="51" Width="324" FontSize="24" FontFamily="Courier New"/>
-        <Label Content="Редактирование программ для сотрудников" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="32" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Программа,которая заменится:" HorizontalAlignment="Left" Margin="374,61,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Button" Click="Image_Load" HorizontalAlignment="Left" Margin="616,373,0,0" VerticalAlignment="Top"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="tbPosi"  
+                 HorizontalAlignment="Left" 
+                 IsReadOnly="True" 
+                 Margin="11,176,0,0" 
+                 TextWrapping="Wrap" 
+                 Text="{Binding Positions.PositionName}" 
+                 VerticalAlignment="Top" 
+                 FontSize="36" 
+                 FontFamily="Courier New" 
+                 Height="75" Width="500"/>
 
+        <ComboBox x:Name="cbAllProg" 
+                  SelectedItem="{Binding Software}" 
+                  DisplayMemberPath="SoftwareName"  
+                  HorizontalAlignment="Left" 
+                  Margin="574,361,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="500" 
+                  FontSize="36" 
+                  FontFamily="Courier New" 
+                  Height="75"/>
+
+        <TextBox x:Name="tbVProg" 
+                 IsReadOnly="True" 
+                 HorizontalAlignment="Left" 
+                 Margin="578,176,0,0" 
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 VerticalAlignment="Top" 
+                 FontSize="36" 
+                 FontFamily="Courier New" 
+                 Height="75" Width="500"/>
+
+        <Button Content="Сохранить изменения" 
+                Click="Btn_Edit_Click" 
+                HorizontalAlignment="Left" 
+                Margin="313,512,0,0" 
+                VerticalAlignment="Top" 
+                FontSize="36" 
+                FontFamily="Courier New" 
+                Foreground="White" 
+                Height="116" 
+                Width="462" Background="#FF00C2C5">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+
+        <ComboBox x:Name="cbLinc" 
+                  SelectedItem="{Binding LicenseInfo}" 
+                  DisplayMemberPath="LicenseInfo"  
+                  HorizontalAlignment="Left" 
+                  Margin="7,362,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="500" 
+                  FontSize="36" 
+                  FontFamily="Courier New" 
+                  Height="75"/>
+
+        <TextBlock Text="Вы выбрали должность:" TextWrapping="Wrap"
+               HorizontalAlignment="Left" 
+               Margin="12,124,0,0" 
+               VerticalAlignment="Top" 
+               FontSize="36" 
+               FontFamily="Courier New" 
+               Foreground="Black"/>
+
+        <TextBlock Text="Выберите программу, на которую хотите заменить" 
+                   TextWrapping="Wrap" 
+                   HorizontalAlignment="Left" 
+                   Margin="578,283,0,0" 
+                   VerticalAlignment="Top" 
+                   Height="82" 
+                   Width="524" 
+                   FontSize="36" 
+                   FontFamily="Courier New"/>
+
+        <TextBlock Text="Выберите необходимость лицензии" 
+                   TextWrapping="Wrap" 
+                   HorizontalAlignment="Left" 
+                   Margin="8,276,0,0" 
+                   VerticalAlignment="Top" 
+                   Height="74" 
+                   Width="540" 
+                   FontSize="36" 
+                   FontFamily="Courier New"/>
+
+        <Label Content="Редактирование программ для сотрудников" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               FontSize="44" 
+               FontFamily="Courier New" 
+               FontWeight="Bold" 
+               FontStyle="Italic"/>
+
+        <TextBlock Text="Программа, которая заменится:" TextWrapping="Wrap"
+               HorizontalAlignment="Left" 
+               Margin="576,95,0,0" 
+               VerticalAlignment="Top" 
+               FontSize="36" 
+               FontFamily="Courier New" Height="92" Width="591"/>
+        <Button Content="Назад" 
+            Click="Btn_GoBack" 
+            HorizontalAlignment="Left" 
+            Margin="790,714,0,0" 
+            VerticalAlignment="Top" 
+            FontSize="36" 
+            FontFamily="Courier New" 
+            Foreground="White" 
+            Height="78" 
+            Width="301" Background="#FF00C2C5">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Page>

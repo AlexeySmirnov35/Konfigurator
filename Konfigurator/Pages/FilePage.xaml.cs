@@ -76,5 +76,10 @@ namespace Konfigurator.Pages
             tbContent.Clear();
             selectedFile = null; 
         }
+
+        private void Btn_GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

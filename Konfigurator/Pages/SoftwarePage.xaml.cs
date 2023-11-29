@@ -45,5 +45,10 @@ namespace Konfigurator.Pages
         {
             NavigationService.Navigate(new SoftInfoPage(null));
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

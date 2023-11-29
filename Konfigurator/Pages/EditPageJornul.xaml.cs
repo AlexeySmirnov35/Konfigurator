@@ -86,5 +86,10 @@ namespace Konfigurator.Pages
                 this.IsEnabled = true;
             }
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack(); 
+        }
     }
 }

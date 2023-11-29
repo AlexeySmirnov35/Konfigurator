@@ -35,5 +35,10 @@ namespace Konfigurator.Pages
                 NavigationService.Navigate(editSoftwarePage);
             }
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

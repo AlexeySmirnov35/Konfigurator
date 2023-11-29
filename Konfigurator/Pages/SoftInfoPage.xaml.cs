@@ -33,6 +33,7 @@ namespace Konfigurator.Pages
             
             DataContext = _software;
             cbFile.ItemsSource=KonfigKcEntities.GetContext().Files.ToList();
+            cbFile.Items.Refresh();
 
         }
 
@@ -104,6 +105,19 @@ namespace Konfigurator.Pages
         private void TextBlock_Click(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new Uri("Pages/FilePage.xaml", UriKind.Relative));
+            
+        }
+
+        
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            cbFile.ItemsSource = KonfigKcEntities.GetContext().Files.ToList();
+        }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

@@ -75,5 +75,10 @@ namespace Konfigurator.Pages
                 existingPosition.PositionName = newPosition.PositionName;
             }
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

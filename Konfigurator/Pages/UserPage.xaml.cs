@@ -34,5 +34,10 @@ namespace Konfigurator.Pages
         {
             NavigationService.Navigate(new Uri("Pages/PageJornul.xaml", UriKind.Relative));
         }
+
+        private void Btn_GoBack(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

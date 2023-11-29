@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konfigurator.Windos"
         mc:Ignorable="d"
-        Title="AdminWindow" WindowState="Maximized" Height="25" Width="108">
+        Title="AdminWindow" Height="900" Width="1100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid Background="White">
         <Frame x:Name="FrmMain"></Frame>
     </Grid>

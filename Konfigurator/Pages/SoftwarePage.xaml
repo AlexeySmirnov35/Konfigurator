@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:Height="800" d:Width="1100"
       Title="SoftwarePage">
 
     <Grid Background="White">
@@ -22,7 +22,7 @@
                 <TextBox Width="369" Name="TboxSerch" TextChanged="Tbox_Search" Height="54" FontSize="20"></TextBox>
             </StackPanel>
         </WrapPanel>
-        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="288"  BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="24" FontFamily="Courier New" Margin="10,105,10,0" >
+        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="584"  BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="24" FontFamily="Courier New" Margin="231,122,230,0" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Программа">
@@ -35,7 +35,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Перечень ролей" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="254,64,0,0"/>
-        <Button Content="Добавить новую программу" Click="Add_Soft_Click" HorizontalAlignment="Left" Margin="308,414,0,0" VerticalAlignment="Top"/>
+        <Label Content="Перечень программ" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="350,61,0,0"/>
+        <Button Content="Добавить новую программу" Click="Add_Soft_Click" HorizontalAlignment="Left" Margin="232,727,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="20" Height="52" Width="311"/>
+        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="713,721,0,0" VerticalAlignment="Top" Width="156" FontFamily="Courier New" Height="53"/>
     </Grid>
 </Page>
