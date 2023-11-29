@@ -40,7 +40,6 @@ namespace Konfigurator.Pages
         {
             if (Uri.TryCreate(e.Uri.ToString(), UriKind.Absolute, out Uri uriResult))
             {
-                // Откройте ссылку в браузере по умолчанию
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("chrome.exe", _software.WebUrl));
 
                 e.Handled = true;

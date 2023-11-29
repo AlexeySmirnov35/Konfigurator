@@ -23,7 +23,7 @@ namespace Konfigurator.Pages
 
         private void Listview_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // При изменении выделенной строки, заполните соответствующие элементы управления значениями выбранной строки.
+            
             if (listview.SelectedItem != null)
             {
                 selectedFile = (Files)listview.SelectedItem;
@@ -60,12 +60,12 @@ namespace Konfigurator.Pages
                 return;
             }
 
-            if (selectedFile != null) // Если строка была выбрана, то обновите данные в базе данных
+            if (selectedFile != null) 
             {
                 selectedFile.FileName = fileName;
                 selectedFile.FileContent = fileContent;
             }
-            else // Иначе, добавьте новый файл в базу данных
+            else 
             {
                 Files newFile = new Files { FileName = fileName, FileContent = fileContent };
                 KonfigKcEntities.GetContext().Files.Add(newFile);
@@ -74,7 +74,7 @@ namespace Konfigurator.Pages
             KonfigKcEntities.GetContext().SaveChanges();
             listview.ItemsSource = KonfigKcEntities.GetContext().Files.ToList();
             tbContent.Clear();
-            selectedFile = null; // Сброс выбранного файла после сохранения
+            selectedFile = null; 
         }
     }
 }
