@@ -55,7 +55,7 @@ namespace Konfigurator.Pages
 
         private void Btn_GoBack(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.GoBack();
         }
     }
 }

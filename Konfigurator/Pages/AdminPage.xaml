@@ -52,5 +52,13 @@
             </Button.BorderBrush>
         </Button>
         <Image HorizontalAlignment="Left" Height="296" Margin="326,10,0,0" VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
+        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="GoNack_Click" HorizontalAlignment="Left" Margin="846,698,0,0" VerticalAlignment="Top" Height="69" Width="236" FontSize="36" FontFamily="Courier New">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Page>

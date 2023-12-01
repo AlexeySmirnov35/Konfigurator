@@ -25,12 +25,9 @@ namespace Konfigurator.Windos
         {
             InitializeComponent();
             FrmMain.Navigate(new UserPage());
+            Application.Current.MainWindow.Close();
         }
 
-        private void Btn_AddRequest(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
+       
     }
 }

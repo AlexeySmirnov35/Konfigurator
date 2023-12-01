@@ -37,7 +37,8 @@ namespace Konfigurator.Pages
 
         private void Btn_GoBack(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            MainWindow mainWindow=new MainWindow();
+            mainWindow.Show();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

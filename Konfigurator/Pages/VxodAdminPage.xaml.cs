@@ -35,11 +35,11 @@ namespace Konfigurator.Pages
                   MessageBox.Show("Hello!");
                   AdminWindow adminWindow=new AdminWindow();
                   adminWindow.Show();
-                  
+                  Application.Current.MainWindow.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ne verno");
+                    MessageBox.Show("Не верный логин или пароль");
                 }
             }
             catch(Exception ex)

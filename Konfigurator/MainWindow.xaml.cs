@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Konfigurator.Windos;
 
 namespace Konfigurator
 {
@@ -25,6 +26,8 @@ namespace Konfigurator
         {
             InitializeComponent();
             FramMain.Navigate(new GlavPage());
+            UserWindow userWindow=new UserWindow();
+            userWindow.Close();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Konfigurator.Windos;
+﻿using iText.Svg.Renderers.Path.Impl;
+using Konfigurator.Windos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,14 @@ namespace Konfigurator.Pages
         {
             UserWindow userWindow=new UserWindow();
             userWindow.ShowDialog();
-        }
+            
 
+        }
+        private void UserWindow_Closed(object sender, EventArgs e)
+        {
+            // Закрыть текущее окно
+            Window.GetWindow(this).Close();
+        }
         private void Btn_Admin_Click(object sender, RoutedEventArgs e)
         {
 
