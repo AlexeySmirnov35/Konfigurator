@@ -28,43 +28,53 @@ namespace Konfigurator.Pages
 
         private void AddEditRole_Click(object sender, RoutedEventArgs e)
         {
-            string newPositionTitle = tbPos.Text;
-            var isDuplicate = KonfigKcEntities.GetContext().Positions.Any(sp => sp.PositionName==tbPos.Text);
+            
             StringBuilder errors = new StringBuilder();
-            if (tbPos.Text == null)
-                errors.AppendLine("Введите должность");
-            if (isDuplicate)
+
+            if (string.IsNullOrWhiteSpace(tbPos.Text))
             {
-                errors.AppendLine("Такая запись существует");
-            }
-            if (errors.Length > 0)
-            {
-                MessageBox.Show(errors.ToString());
-                return;
-            }
-            if (!string.IsNullOrEmpty(newPositionTitle))
-            {
-                Positions newPosition = new Positions { PositionName = newPositionTitle };
-                if (listview.SelectedItem != null)
-                {
-                    Positions selectedPosition = (Positions)listview.SelectedItem;
-                    newPosition.PositionID = selectedPosition.PositionID;
-                    UpdatePosition(newPosition);
-                }
-                else
-                {
-                    KonfigKcEntities.GetContext().Positions.Add(newPosition);
-                }
-                KonfigKcEntities.GetContext().SaveChanges();
-                listview.SelectedItem = null;
-                listview.ItemsSource = KonfigKcEntities.GetContext().Positions.ToList();
-                tbPos.Clear();
+                errors.AppendLine("Введите корректное название должности");
             }
             else
             {
-                MessageBox.Show("Введите название должности.");
+                var dbContext = KonfigKcEntities.GetContext();
+                var isDuplicate = dbContext.Positions.Any(sp => sp.PositionName == tbPos.Text);
+
+                if (isDuplicate)
+                {
+                    errors.AppendLine("Такая запись существует");
+                }
+
+                if (errors.Length == 0)
+                {
+                    Positions newPosition = new Positions { PositionName = tbPos.Text };
+
+                    if (listview.SelectedItem != null)
+                    {
+                        Positions selectedPosition = (Positions)listview.SelectedItem;
+                        newPosition.PositionID = selectedPosition.PositionID;
+                        UpdatePosition(newPosition);
+                    }
+                    else
+                    {
+                        dbContext.Positions.Add(newPosition);
+                    }
+
+                    dbContext.SaveChanges();
+                    listview.SelectedItem = null;
+                    listview.ItemsSource = dbContext.Positions.ToList();
+                    tbPos.Clear();
+                }
+            }
+
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString());
             }
         }
+
+
+
 
         private void UpdatePosition(Positions newPosition)
         {

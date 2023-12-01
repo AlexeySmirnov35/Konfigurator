@@ -46,38 +46,51 @@ namespace Konfigurator.Pages
                 tbContent.Text = fileOpen.SafeFileName;
             }
         }
-
         private void Btn_SaveFile_Click(object sender, RoutedEventArgs e)
         {
-            string fileName = tbContent.Text;
+            string fileName = tbContent.Text.Trim();
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrEmpty(fileName))
+            {
                 errors.AppendLine("Выберите файл.");
+            }
+            else
+            {
+                var dbContext = KonfigKcEntities.GetContext();
+
+                var isDuplicate = dbContext.Files.Any(f => f.FileName == fileName);
+
+                if (isDuplicate)
+                {
+                    errors.AppendLine("Такой файл уже существует.");
+                }
+
+                if (errors.Length == 0)
+                {
+                    if (selectedFile != null)
+                    {
+                        selectedFile.FileName = fileName;
+                        selectedFile.FileContent = fileContent;
+                    }
+                    else
+                    {
+                        Files newFile = new Files { FileName = fileName, FileContent = fileContent };
+                        dbContext.Files.Add(newFile);
+                    }
+
+                    dbContext.SaveChanges();
+                    listview.ItemsSource = dbContext.Files.ToList();
+                    tbContent.Clear();
+                    selectedFile = null;
+                }
+            }
 
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
-                return;
             }
-
-            if (selectedFile != null) 
-            {
-                selectedFile.FileName = fileName;
-                selectedFile.FileContent = fileContent;
-            }
-            else 
-            {
-                Files newFile = new Files { FileName = fileName, FileContent = fileContent };
-                KonfigKcEntities.GetContext().Files.Add(newFile);
-            }
-
-            KonfigKcEntities.GetContext().SaveChanges();
-            listview.ItemsSource = KonfigKcEntities.GetContext().Files.ToList();
-            tbContent.Clear();
-            selectedFile = null; 
         }
-
         private void Btn_GoBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
@@ -85,48 +98,39 @@ namespace Konfigurator.Pages
 
         private void Btn_DeleteFile_Click(object sender, RoutedEventArgs e)
         {
-            var fileDel = listview.SelectedItems.Cast<Files>().ToList();
+            var filesToDelete = listview.SelectedItems.Cast<Files>().ToList();
 
-            if (MessageBox.Show($"Вы действительно хотите удалить эти {fileDel.Count()} элемента!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show($"Вы действительно хотите удалить эти {filesToDelete.Count()} элемента!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
             {
-                try
-                {
-                    var dbContext = KonfigKcEntities.GetContext();
+                return;
+            }
 
-                    foreach (var file in fileDel)
+            try
+            {
+                var dbContext = KonfigKcEntities.GetContext();
+
+                foreach (var file in filesToDelete)
+                {
+                    if (!dbContext.Software.Any(item => item.FileID == file.FileID))
                     {
-                        // Проверяем, что файл не используется в других таблицах
-                        if (!IsFileUsedInOtherTables(file))
-                        {
-                            dbContext.Files.Remove(file);
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Файл {file.FileName} используется в других таблицах и не может быть удален.");
-                        }
+                        dbContext.Files.Remove(file);
                     }
+                    else
+                    {
+                        MessageBox.Show($"Файл {file.FileName} используется в других таблицах и не может быть удален.");
+                    }
+                }
 
-                    dbContext.SaveChanges();
-                    MessageBox.Show("Удаление прошло успешно");
-                    listview.ItemsSource = dbContext.Files.ToList();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ошибка при удалении файла: {ex.Message}");
-                }
+                dbContext.SaveChanges();
+                MessageBox.Show("Удаление прошло успешно");
+                listview.ItemsSource = dbContext.Files.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при удалении файла: {ex.Message}");
             }
         }
 
-        private bool IsFileUsedInOtherTables(Files file)
-        {
-            // Добавьте проверки на использование файла в других таблицах
-            // Верните true, если файл используется, и false, если нет
-            // Пример проверки (замените на реальные проверки):
-
-            return KonfigKcEntities.GetContext().Software.Any(item => item.FileID == file.FileID);
-
-             // временный код, замените на реальные проверки
-        }
 
         private void Btn_OpenFile(object sender, RoutedEventArgs e)
         {

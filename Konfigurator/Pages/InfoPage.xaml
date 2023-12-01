@@ -57,12 +57,12 @@
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="310,8,0,0" TextWrapping="Wrap" Text="ПО для сотрудников" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,753,0,0" TextWrapping="Wrap" Text="*Для редактирования дважды нажмите на строку" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" Width="364" Height="60"/>
-        <ComboBox HorizontalAlignment="Left" Margin="6,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="366,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="726,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
+        <ComboBox x:Name="cbPosir" HorizontalAlignment="Left" SelectedItem="{Binding Positions}" DisplayMemberPath="PositionName" Margin="6,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
+        <ComboBox x:Name="cbSoft" SelectedItem="{Binding Software}" DisplayMemberPath="SoftwareName" HorizontalAlignment="Left" Margin="366,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
+        <ComboBox x:Name="cbLis" SelectedItem="{Binding LicenseInfo}" DisplayMemberPath="LicenseInfo"   HorizontalAlignment="Left" Margin="726,689,0,0" VerticalAlignment="Top" Width="356" Height="55" FontSize="24"/>
         <TextBlock HorizontalAlignment="Left" Margin="-4,661,0,0" TextWrapping="Wrap" Text="Выберите должность" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" Width="280" Height="45"/>
         <TextBlock HorizontalAlignment="Left" Margin="366,664,0,0" TextWrapping="Wrap" Text="Выберите ПО" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" Width="164" Height="30" RenderTransformOrigin="0.381,0.466"/>
-        <TextBlock HorizontalAlignment="Left" Margin="704,664,0,0" TextWrapping="Wrap" Text="Выберите статус лицензии" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" Width="382" Height="82"/>
+        <TextBlock HorizontalAlignment="Left" Margin="704,664,0,0" TextWrapping="Wrap" Text="Выберите статус лицензии" VerticalAlignment="Top" FontSize="24" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" TextAlignment="Center" Width="382" Height="22"/>
         <Button Content="Создать" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_Create" FontSize="36" HorizontalAlignment="Left" 
                 Margin="454,755,0,0" VerticalAlignment="Top" Width="186" FontFamily="Courier New" Height="47">
             <Button.BorderBrush>

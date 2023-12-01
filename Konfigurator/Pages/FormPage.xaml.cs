@@ -92,9 +92,9 @@ namespace Konfigurator.Pages
            
             if (string.IsNullOrWhiteSpace(tbDesc.Text))
                 errors.AppendLine("Напишите описание!");
-            if (cbDepar == null)
+            if (cbDepar.SelectedItem == null)
                 errors.AppendLine("Укажите подразделения");
-            if (cbPosir == null)
+            if (cbPosir.SelectedItem == null)
                 errors.AppendLine("Укажите должность!");
             
             if (errors.Length > 0)
@@ -108,7 +108,7 @@ namespace Konfigurator.Pages
                 var depar = cbDepar.SelectedItem as Departments;
 
                 var posit = cbPosir.SelectedItem as Positions;
-                //var animal=ZooBdEntities1.GetContext().TypeAnimals.Where(x=>x.NameType==tbAmimal.SelectedItem.ToString()).FirstOrDefault;
+                
                 var request = new Requests
                 {
                     DepartmentID = depar.DepartmentID,

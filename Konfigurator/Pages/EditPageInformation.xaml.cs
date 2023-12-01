@@ -40,39 +40,42 @@ namespace Konfigurator.Pages
         {
             var prog = cbAllProg.SelectedItem as Software;
             var linc = cbLinc.SelectedItem as LicensiaInfo;
-            var isDuplicate = KonfigKcEntities.GetContext().SoftwarePosition.Any(sp =>sp.PositionID == _software.PositionID && sp.SoftwareID == prog.SoftwareID);
-            StringBuilder errors= new StringBuilder();
+
+            StringBuilder errors = new StringBuilder();
+
             if (prog == null)
                 errors.AppendLine("Выберите программу для замены");
+
             if (linc == null)
                 errors.AppendLine("Выберите необходимость лицензии");
+
+            var dbContext = KonfigKcEntities.GetContext();
+            var isDuplicate = dbContext.SoftwarePosition
+                .Any(sp => sp.PositionID == _software.PositionID && sp.SoftwareID == prog.SoftwareID);
+
             if (isDuplicate)
-            {
                 errors.AppendLine("Такая запись существует");
-            }
+
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
+
             if (_software.PositionID == 0)
             {
-                
+                var softpos = new SoftwarePosition
+                {
+                    SoftwareID = prog?.SoftwareID ?? 0,
+                    LicenseID = linc?.LicenseID ?? 0
+                };
 
-                 var softpos = new SoftwarePosition
-                 {
-                     
-                     SoftwareID = prog.SoftwareID,
-                     LicenseID= linc.LicenseID
-
-                 };
-                KonfigKcEntities.GetContext().SoftwarePosition.Add(softpos);
-             
+                dbContext.SoftwarePosition.Add(softpos);
             }
 
             try
             {
-                KonfigKcEntities.GetContext().SaveChanges();
+                dbContext.SaveChanges();
                 MessageBox.Show("Успешно сохранено");
                 NavigationService.GoBack();
             }
@@ -81,6 +84,7 @@ namespace Konfigurator.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
 
         private void Tbox_Search(object sender, TextChangedEventArgs e)
         {

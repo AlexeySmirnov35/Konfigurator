@@ -53,8 +53,8 @@ namespace Konfigurator.Pages
 
         private void Btn_Save_Soft_Click(object sender, RoutedEventArgs e)
         {
-
             StringBuilder errors = new StringBuilder();
+
             if (string.IsNullOrWhiteSpace(_software.SoftwareName))
                 errors.AppendLine("Укажите название программы!");
             if (string.IsNullOrWhiteSpace(_software.Description))
@@ -63,36 +63,48 @@ namespace Konfigurator.Pages
                 errors.AppendLine("Укажите версию!");
             if (string.IsNullOrWhiteSpace(_software.UpdateDescription))
                 errors.AppendLine("Напишите описание обновления!");
-            if (string.IsNullOrWhiteSpace(_software.WebUrl))
-                errors.AppendLine("Укажите ссылку на документацию!");
+
+            // Check the validity of the URL
+            if (!Uri.TryCreate(_software.WebUrl, UriKind.Absolute, out var uriResult) || (uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps))
+                errors.AppendLine("Укажите корректную ссылку на документацию!");
+
             if (_software.LastUpdateDate == null)
                 errors.AppendLine("Выберите дату последнего обновления!");
+
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
                 return;
             }
+
+            var dbContext = KonfigKcEntities.GetContext();
+
+            var isDuplicate = dbContext.Software.Any(s => s.SoftwareName == _software.SoftwareName && s.SoftwareID != _software.SoftwareID);
+
+            if (isDuplicate)
+            {
+                MessageBox.Show("Такая запись существует");
+                return;
+            }
+
             if (_software.SoftwareID == 0)
             {
-
-
-                var soft = new Software
+                var newSoftware = new Software
                 {
-                    SoftwareName=tbName.Text,
-                    Description=tbDes.Text,
-                    LastUpdateDate=DtPicker.SelectedDate,
-                    UpdateDescription=tbUpDesc.Text,
-                    Version=tbVer.Text,
-                    WebUrl=tbWeb.Text
-
+                    SoftwareName = tbName.Text,
+                    Description = tbDes.Text,
+                    LastUpdateDate = DtPicker.SelectedDate,
+                    UpdateDescription = tbUpDesc.Text,
+                    Version = tbVer.Text,
+                    WebUrl = tbWeb.Text
                 };
-                KonfigKcEntities.GetContext().Software.Add(soft);
 
+                dbContext.Software.Add(newSoftware);
             }
 
             try
             {
-                KonfigKcEntities.GetContext().SaveChanges();
+                dbContext.SaveChanges();
                 MessageBox.Show("Успешно сохранено");
                 NavigationService.GoBack();
             }
@@ -101,6 +113,8 @@ namespace Konfigurator.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+
 
         private void TextBlock_Click(object sender, MouseButtonEventArgs e)
         {

@@ -28,43 +28,41 @@ namespace Konfigurator.Pages
 
         private void AddEditDepar_Click(object sender, RoutedEventArgs e)
         {
-            string newDeparTitle = tbDep.Text;
-            var isDuplicate = KonfigKcEntities.GetContext().Departments.Any(sp => sp.DepartmentName == tbDep.Text);
-            StringBuilder errors = new StringBuilder();
-            if (tbDep.Text == null)
-                errors.AppendLine("Введите подразделение");
-            if (isDuplicate)
+            string newDeparTitle = tbDep.Text.Trim();
+            if (string.IsNullOrEmpty(newDeparTitle))
             {
-                errors.AppendLine("Такая запись существует");
-                listview.SelectedItem = null;
-            }
-            if (errors.Length > 0)
-            {
-                MessageBox.Show(errors.ToString());
+                MessageBox.Show("Введите подразделение");
                 return;
             }
-            if (!string.IsNullOrEmpty(newDeparTitle))
+
+            var dbContext = KonfigKcEntities.GetContext();
+            var isDuplicate = dbContext.Departments.Any(sp => sp.DepartmentName == newDeparTitle);
+
+            if (isDuplicate)
             {
-                Departments newDep= new Departments { DepartmentName = newDeparTitle };
-                if (listview.SelectedItem != null)
-                {
-                    Departments selectedDep = (Departments)listview.SelectedItem;
-                    newDep.DepartmentID = selectedDep.DepartmentID;
-                    UpdatePosition(newDep);
-                }
-                else
-                {
-                    KonfigKcEntities.GetContext().Departments.Add(newDep);
-                }
-                KonfigKcEntities.GetContext().SaveChanges();
+                MessageBox.Show("Такая запись существует");
                 listview.SelectedItem = null;
-                listview.ItemsSource = KonfigKcEntities.GetContext().Departments.ToList();
-                tbDep.Clear();
+                return;
+            }
+
+            Departments newDep = new Departments { DepartmentName = newDeparTitle };
+
+            if (listview.SelectedItem != null)
+            {
+                Departments selectedDep = (Departments)listview.SelectedItem;
+                newDep.DepartmentID = selectedDep.DepartmentID;
+                UpdatePosition(newDep);
             }
             else
             {
-                MessageBox.Show("Введите название должности.");
+                dbContext.Departments.Add(newDep);
             }
+
+            dbContext.SaveChanges();
+
+            listview.SelectedItem = null;
+            listview.ItemsSource = dbContext.Departments.ToList();
+            tbDep.Clear();
         }
 
         private void UpdatePosition(Departments departments)
@@ -80,5 +78,43 @@ namespace Konfigurator.Pages
         {
             NavigationService.GoBack();
         }
+
+        private void DelDepar_Click(object sender, RoutedEventArgs e)
+        {
+            var deparDel = listview.SelectedItems.Cast<Departments>().ToList();
+
+            if (MessageBox.Show($"Вы действительно хотите удалить эти {deparDel.Count()} элемента!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+                var dbContext = KonfigKcEntities.GetContext();
+
+                foreach (var depart in deparDel)
+                {
+                    if (!dbContext.Requests.Any(item => item.DepartmentID == depart.DepartmentID))
+                    {
+                        dbContext.Departments.Remove(depart);
+                        MessageBox.Show($"{depart.DepartmentName} успешно удален.");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{depart.DepartmentName} используется в других таблицах и не может быть удален.");
+                    }
+                }
+
+                dbContext.SaveChanges();
+                MessageBox.Show("Удаление прошло успешно");
+                listview.ItemsSource = dbContext.Departments.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при удалении файла: {ex.Message}");
+            }
+        }
+
+
     }
 }
