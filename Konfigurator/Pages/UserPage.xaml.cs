@@ -39,5 +39,10 @@ namespace Konfigurator.Pages
         {
             NavigationService.GoBack();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/UserSoft.xaml", UriKind.Relative));
+        }
     }
 }

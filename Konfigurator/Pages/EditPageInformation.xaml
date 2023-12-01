@@ -60,7 +60,7 @@
                 FontFamily="Courier New" 
                 Foreground="White" 
                 Height="116" 
-                Width="462" Background="#FF00C2C5">
+                Width="462" Background="#FF00C2C5" BorderThickness="2,2,2,2">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -131,7 +131,7 @@
             FontFamily="Courier New" 
             Foreground="White" 
             Height="78" 
-            Width="301" Background="#FF00C2C5">
+            Width="301" Background="#FF00C2C5" BorderThickness="2,2,2,2">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>

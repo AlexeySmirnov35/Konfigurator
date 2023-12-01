@@ -8,7 +8,16 @@
       d:Height="1000" d:Width="1100"
       Title="FormPage">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
         <Grid x:Name="print">
             <ComboBox HorizontalAlignment="Left" x:Name="cbDepar" SelectedItem="{Binding Departments}" DisplayMemberPath="DepartmentName" Margin="13,129,0,0" VerticalAlignment="Top" Width="397" Height="44" FontSize="28" FontFamily="Courier New"/>
@@ -35,8 +44,23 @@
             <TextBox x:Name="tbInc" HorizontalAlignment="Left" Margin="127,8,0,0" TextWrapping="Wrap" FontSize="28" FontFamily="Courier New" VerticalAlignment="Top" Width="159" Height="37"  TextAlignment="Center"/>
             <Label Content="Номер:" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" Height="47" Width="136" />
         </Grid>
-        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="942,737,0,0" VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52"/>
-        <Button Content="Отправить обращение" Click="Create_Req_Click" HorizontalAlignment="Left" Margin="326,699,0,0" VerticalAlignment="Top" Height="82" Width="451" FontSize="36" FontFamily="Courier New"/>
+        <Button Content="Назад" Click="Btn_GoBack" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="36" HorizontalAlignment="Left" Margin="942,737,0,0" VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Отправить обращение" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Create_Req_Click" HorizontalAlignment="Left" Margin="326,699,0,0" VerticalAlignment="Top" Height="82" Width="451" 
+                FontSize="36" FontFamily="Courier New">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Page>

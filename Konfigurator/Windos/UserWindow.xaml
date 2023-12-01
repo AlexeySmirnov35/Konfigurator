@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konfigurator.Windos"
         mc:Ignorable="d"
-        Title="UserWindow" Height="1000" Width="1100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
+        Title="Панель пользователя" Height="1000" Width="1100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame Content="" Name="FrmMain"/>
     </Grid>

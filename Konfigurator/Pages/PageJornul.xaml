@@ -5,34 +5,90 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konfigurator.Pages"
       mc:Ignorable="d" 
-      Height="21cm" Width="29.7cm"
+      Height="1000" Width="1100"
       Title="PageJornul" IsVisibleChanged="Page_IsVis">
 
-    <Grid Background="White" Margin="0,0,0,-9">
-        <Grid x:Name="print">
-            <ListView x:Name="listViewReq" MouseDoubleClick="SoftwareListView_MouseDoubleClick" FontFamily="Courier New" FontSize="20" Margin="-8,0,-6,1" Background="White" BorderBrush="Black" Padding="1,1,1,1" ScrollViewer.CanContentScroll="True">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid x:Name="print" Margin="0,0,0,120">
+            <ListView x:Name="listViewReq"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" FontFamily="Courier New" FontSize="20" Background="White" BorderBrush="Black" Padding="1,1,1,1" Height="845" Margin="2,35,25,0" VerticalAlignment="Top">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Номер инцидента" DisplayMemberBinding="{Binding RequestID}"/>
-                        <GridViewColumn Header="Подразделение" DisplayMemberBinding="{Binding Departments.DepartmentName}" />
-                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Positions.PositionName}" />
-                        <GridViewColumn Header="Дата заявки" DisplayMemberBinding="{Binding RequestDate}"/>
-                        <GridViewColumn Header="Описание">
+                        <GridViewColumn  Header="№">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400"></TextBlock>
+                                    <TextBlock Text="{Binding RequestID}" TextWrapping="Wrap"></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status.NameStatus}" />
+                        <GridViewColumn Header="Подразделение">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Departments.DepartmentName}" TextWrapping="Wrap" Width="145"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Должность">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Positions.PositionName}" TextWrapping="Wrap" Width="160"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Дата заявки">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding RequestDate}" TextWrapping="Wrap" Width="100"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Описание">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="435"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Статус">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Status.NameStatus}" TextWrapping="Wrap" Width="85"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
 
                     </GridView>
                 </ListView.View>
             </ListView>
         </Grid>
-        <Button Content="Экспорт PDF" Click="Create_Pdf_Click" HorizontalAlignment="Left" Margin="519,742,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="22" Height="31" Width="176"/>
-        <TextBlock HorizontalAlignment="Left" Margin="6,750,0,0" TextWrapping="Wrap" Text="Для печати только определенной заявки,дважды нажмите на нее" VerticalAlignment="Top" Height="44" Width="302" FontSize="16" FontFamily="Courier New"/>
-        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="956,734,0,0" VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52"/>
+        <Button Content="Экспорт PDF"  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Create_Pdf_Click" HorizontalAlignment="Left"
+                Margin="743,894,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="22" Height="30" Width="176">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="2,884,0,0" TextWrapping="Wrap" Text="Для печати только определенной заявки,дважды нажмите на нее" VerticalAlignment="Top" Height="44" Width="302" FontSize="16" FontFamily="Courier New"/>
+        <Button Content="Назад"  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack" FontSize="24" HorizontalAlignment="Left" Margin="992,896,0,0" VerticalAlignment="Top" 
+                Width="94" FontFamily="Courier New" Height="31">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Page>

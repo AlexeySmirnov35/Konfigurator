@@ -40,5 +40,15 @@ namespace Konfigurator.Pages
         {
             NavigationService.GoBack();
         }
+
+        private void Btn_Create(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_Del_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

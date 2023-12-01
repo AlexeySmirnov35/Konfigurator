@@ -7,7 +7,16 @@
       mc:Ignorable="d" 
       d:Height="1000" d:Width="1100"
       Title="InformationPage" Background="Black">
-         <Grid Background="White">
+         <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid>
             <DataGrid x:Name="positionDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
                   SelectionChanged="PositionDataGrid_SelectionChanged" Margin="0,0,342,0">

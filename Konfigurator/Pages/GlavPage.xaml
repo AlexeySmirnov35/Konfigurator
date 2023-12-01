@@ -8,10 +8,36 @@
       d:Height="1000" d:Width="1100"
       Title="GlavPage">
 
-    <Grid Background="#FF00EDFF">
-        <Button Content="Войти в панель администратора" Click="Btn_Admin_Click" FontSize="36" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Height="110" Width="666" Background="White" FontFamily="Courier New" FontWeight="Bold"/>
-        <Button Content="Войти в панель пользователя" Click="Btn_User_Click" FontSize="36" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Height="110" Width="616" Background="White" FontFamily="Courier New" FontWeight="Bold"/>
-        <Label Content="СЭТ" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Войти в панель администратора" Click="Btn_Admin_Click" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="36" HorizontalAlignment="Left" Margin="229,390,0,0" VerticalAlignment="Top" 
+                Height="110" Width="666"  FontFamily="Courier New" FontWeight="Bold">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Войти в панель пользователя" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_User_Click" FontSize="36" HorizontalAlignment="Left" Margin="254,560,0,0" VerticalAlignment="Top" 
+                Height="110" Width="616" FontFamily="Courier New" FontWeight="Bold">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="Конфигуратор" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="308,279,0,0"/>
+        <Image HorizontalAlignment="Left" Height="296" Margin="330,0,0,0" VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
 
     </Grid>
 </Page>

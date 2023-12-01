@@ -26,6 +26,6 @@
             <TextBlock x:Name="tbSt" HorizontalAlignment="Left" Margin="204,100,0,0" TextWrapping="Wrap" Text="{Binding Status.NameStatus}" VerticalAlignment="Top" Width="166" FontFamily="Times New Roman" FontSize="22" Height="30"/>
         </Grid>
         <Button Content="Экспорт" Click="Create_Pdf_Click" HorizontalAlignment="Left" Margin="2,-2,0,0" VerticalAlignment="Top" TextBlock.FontFamily="Times New Roman" TextBlock.FontSize="22" Height="36" Width="102"/>
-        <Button Content="Назад" Click="Btn_GoBack" HorizontalAlignment="Left" Margin="674,-4,0,0" VerticalAlignment="Top" TextBlock.FontFamily="Times New Roman" TextBlock.FontSize="22" Height="36" Width="102"/>
+        <Button Content="Назад" Click="Btn_GoBack" HorizontalAlignment="Left" Margin="680,4,0,0" VerticalAlignment="Top" TextBlock.FontFamily="Times New Roman" TextBlock.FontSize="22" Height="36" Width="102"/>
     </Grid>
 </Page>

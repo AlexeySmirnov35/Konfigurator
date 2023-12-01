@@ -80,5 +80,55 @@ namespace Konfigurator.Pages
         {
             NavigationService.GoBack();
         }
+
+        private void DelRole_Click(object sender, RoutedEventArgs e)
+        {
+            var positionsToDelete = listview.SelectedItems.Cast<Positions>().ToList();
+
+            if (MessageBox.Show($"Вы действительно хотите удалить эти {positionsToDelete.Count()} элемента!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var dbContext = KonfigKcEntities.GetContext();
+
+                    foreach (var position in positionsToDelete)
+                    {
+                        // Проверяем, что должность не используется в других таблицах
+                        if (!IsPositionUsedInOtherTables(position))
+                        {
+                            dbContext.Positions.Remove(position);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Должность {position.PositionName} используется в других таблицах и не может быть удалена.");
+                        }
+                    }
+
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно");
+                    listview.ItemsSource = dbContext.Positions.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении должности: {ex.Message}");
+                }
+            }
+        }
+
+        private bool IsPositionUsedInOtherTables(Positions position)
+        {
+            // Проверьте использование должности в других таблицах
+            // Верните true, если должность используется, и false, если нет
+            // Пример проверки (замените на реальные проверки):
+
+            return KonfigKcEntities.GetContext().SoftwarePosition.Any(item => item.PositionID == position.PositionID)
+                || KonfigKcEntities.GetContext().Requests.Any(item => item.PositionID == position.PositionID);
+
+            // временный код, замените на реальные проверки
+        }
+
+
+
     }
 }
+

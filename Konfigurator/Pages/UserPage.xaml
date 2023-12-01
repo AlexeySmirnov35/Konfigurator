@@ -8,12 +8,53 @@
       d:Height="1000" d:Width="1100"
       Title="UserPage" >
 
-    <Grid Background="White">
-        <Label Content="Панель пользователя" HorizontalAlignment="Left" Margin="276,210,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Courier New"/>
-        <Button Content="База знаний" HorizontalAlignment="Left" Margin="426,409,0,0" VerticalAlignment="Top" Height="79" Width="254" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" HorizontalAlignment="Left" Margin="426,513,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Создать заявку" Click="Btn_AddRequest"  HorizontalAlignment="Left" Margin="426,306,0,0" VerticalAlignment="Top" Height="73" Width="254" FontSize="24" FontFamily="Courier New"/>
-        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="428,594,0,0" VerticalAlignment="Top" Width="250" FontFamily="Courier New" Height="77"/>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#AEEEEE" Offset="0"/>
+                <GradientStop Color="#20B2AA" Offset="0.3"/>
+                <GradientStop Color="#00CED1" Offset="0.6"/>
+                <GradientStop Color="#20B2AA" Offset="0.8"/>
+                <GradientStop Color="#AEEEEE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Панель пользователя" HorizontalAlignment="Left" Margin="248,204,0,0" VerticalAlignment="Top" FontSize="55" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
+        <Button Content="База знаний" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left"
+                Margin="206,500,0,0" VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New" Click="Button_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="613,353,0,0"
+                VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Создать заявку" Click="Btn_AddRequest" Background="#FF00C2C5" BorderThickness="2,2,2,2"  HorizontalAlignment="Left"
+                    Margin="206,353,0,0" VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="612,500,0,0" 
+                VerticalAlignment="Top" Width="340" FontFamily="Courier New" Height="90">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF80FD09"/>
+                    <GradientStop Color="#FFB91212" Offset="0.997"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
 
     </Grid>
 </Page>
