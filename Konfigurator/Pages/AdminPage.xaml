@@ -18,7 +18,10 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Редактор базы знаний" Background="#FF00C2C5" BorderThickness="2,2,2,2"  Click="Edit_bd_Click" HorizontalAlignment="Left" Margin="99,393,0,0" VerticalAlignment="Top" Height="90" Width="516" FontSize="36" FontFamily="Courier New">
+        <Button Content="Редактор базы знаний" Background="#FF00C2C5" BorderThickness="2,2,2,2" 
+                Click="Edit_bd_Click" HorizontalAlignment="Left"
+                Margin="99,393,0,0" VerticalAlignment="Top" Height="90" Width="516"
+                FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -26,7 +29,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Перечень ПО" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Soft_Click" HorizontalAlignment="Left" Margin="665,524,0,0" VerticalAlignment="Top" Height="101" Width="330" FontSize="36" FontFamily="Courier New">
+        <Button Content="Перечень ПО" Background="#FF00C2C5" BorderThickness="2,2,2,2" 
+                Click="Soft_Click" HorizontalAlignment="Left" Margin="665,524,0,0" VerticalAlignment="Top" 
+                Height="101" Width="330" FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -34,8 +39,12 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Панель администратора" HorizontalAlignment="Left" Margin="196,294,0,0" VerticalAlignment="Top" FontSize="60" FontFamily="Courier New" Height="93" Width="774" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Content="Перечень ролей" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Role_Click" HorizontalAlignment="Left" Margin="665,391,0,0" VerticalAlignment="Top" Height="90" Width="333" FontSize="36" FontFamily="Courier New">
+        <Label Content="Панель администратора" HorizontalAlignment="Left" Margin="196,294,0,0"
+               VerticalAlignment="Top" FontSize="60" FontFamily="Courier New" Height="93" Width="774"
+               FontWeight="Bold" FontStyle="Italic"/>
+        <Button Content="Перечень ролей" Background="#FF00C2C5" BorderThickness="2,2,2,2" 
+                Click="Role_Click" HorizontalAlignment="Left" Margin="665,391,0,0" VerticalAlignment="Top"
+                Height="90" Width="333" FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -43,7 +52,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Перечень подразделения" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Depart_Click" HorizontalAlignment="Left" Margin="100,527,0,0" VerticalAlignment="Top" Height="98" Width="516" FontSize="36" FontFamily="Courier New">
+        <Button Content="Перечень подразделения" Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                Click="Depart_Click" HorizontalAlignment="Left" Margin="100,527,0,0" VerticalAlignment="Top"
+                Height="98" Width="516" FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -51,8 +62,11 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Image HorizontalAlignment="Left" Height="296" Margin="326,10,0,0" VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
-        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="GoNack_Click" HorizontalAlignment="Left" Margin="846,698,0,0" VerticalAlignment="Top" Height="69" Width="236" FontSize="36" FontFamily="Courier New">
+        <Image HorizontalAlignment="Left" Height="296" Margin="326,10,0,0" VerticalAlignment="Top"
+               Width="504" Source="/img/krl-transformed.png"/>
+        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="GoNack_Click"
+                HorizontalAlignment="Left" Margin="846,698,0,0" VerticalAlignment="Top" Height="69" Width="236" 
+                FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>

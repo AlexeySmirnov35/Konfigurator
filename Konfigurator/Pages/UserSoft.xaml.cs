@@ -45,11 +45,7 @@ namespace Konfigurator.Pages
         private void UpdateSoftware()
         {
             var allSoftware = KonfigKcEntities.GetContext().Software.ToList();
-
-            // Применяем фильтр по имени программы
             allSoftware = allSoftware.Where(s => s.SoftwareName.ToLower().Contains(tbox_Search.Text.ToLower())).ToList();
-
-            // Сортируем программы по количеству (предполагается, что у Software есть свойство Count)
             listview.ItemsSource = allSoftware.OrderBy(s => s.SoftwareName).ToList();
         }
 

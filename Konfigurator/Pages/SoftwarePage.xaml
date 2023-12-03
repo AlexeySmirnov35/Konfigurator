@@ -21,10 +21,12 @@
         <WrapPanel Orientation="Horizontal" Margin="22,66,696,886"  Width="382"  >
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Поиск:" Width="100" FontSize="24"  FontFamily="Courier New"/>
-                <TextBox Width="272" x:Name="TboxSerch" TextChanged="Tbox_Search" Height="34" FontSize="20" TextBlock.FontFamily="Courier New" TextBlock.FontSize="24"/>
+                <TextBox Width="272" x:Name="TboxSerch" TextChanged="Tbox_Search" 
+                         Height="34" FontSize="20" TextBlock.FontFamily="Courier New" TextBlock.FontSize="24"/>
             </StackPanel>
         </WrapPanel>
-        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="623"  BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="24" FontFamily="Courier New" Margin="16,118,498,0" >
+        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="623" 
+                  BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="24" FontFamily="Courier New" Margin="16,118,498,0" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Программа">
@@ -37,8 +39,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Перечень программ" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="383,-4,0,0"/>
-        <Button  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Add_Soft_Click" HorizontalAlignment="Left" Margin="709,190,0,0" VerticalAlignment="Top" 
+        <Label Content="Перечень программ" HorizontalAlignment="Left" VerticalAlignment="Top"
+               FontSize="36" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="383,-4,0,0"/>
+        <Button  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Add_Soft_Click"
+                 HorizontalAlignment="Left" Margin="709,190,0,0" VerticalAlignment="Top" 
                 FontFamily="Courier New" FontSize="32" Height="92" Width="310">
             <TextBlock Text="Добавить новую программу" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
             <Button.BorderBrush>
@@ -48,7 +52,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Назад" Click="Btn_GoBack" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="32" HorizontalAlignment="Left" Margin="714,400,0,0" VerticalAlignment="Top" Height="92" Width="310" FontFamily="Courier New" >
+        <Button Content="Назад" Click="Btn_GoBack" Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                FontSize="32" HorizontalAlignment="Left" Margin="714,400,0,0" VerticalAlignment="Top"
+                Height="92" Width="310" FontFamily="Courier New" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -56,7 +62,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Удалить" Click="Btn_Del" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="32" HorizontalAlignment="Left" Margin="709,296,0,0" VerticalAlignment="Top" Height="92" Width="310" FontFamily="Courier New"  Foreground="Red" FontWeight="Bold">
+        <Button Content="Удалить" Click="Btn_Del" Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                FontSize="32" HorizontalAlignment="Left" Margin="709,296,0,0" VerticalAlignment="Top" 
+                Height="92" Width="310" FontFamily="Courier New"  Foreground="Red" FontWeight="Bold">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -64,7 +72,11 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <TextBlock Text="*Для редактировния дважды нажмите на строку" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" FontStyle="Italic" Margin="670,529,0,0" Height="68" Width="404" TextAlignment="Center"/>
-        <TextBlock Text="*Для удаления один раз нажмите на строку" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" FontStyle="Italic" Margin="666,600,0,0" Height="84" Width="404" TextAlignment="Center"/>
+        <TextBlock Text="*Для редактировния дважды нажмите на строку" TextWrapping="Wrap" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" FontStyle="Italic" Margin="670,529,0,0"
+                   Height="68" Width="404" TextAlignment="Center"/>
+        <TextBlock Text="*Для удаления один раз нажмите на строку" TextWrapping="Wrap" HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" FontSize="28" FontFamily="Courier New" FontStyle="Italic" Margin="666,600,0,0" 
+                   Height="84" Width="404" TextAlignment="Center"/>
     </Grid>
 </Page>

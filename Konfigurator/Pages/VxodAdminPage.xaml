@@ -18,7 +18,9 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Вход" Click="Btn_Vxod" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="36" HorizontalAlignment="Left" Margin="392,638,0,0" VerticalAlignment="Top" Width="130" FontFamily="Courier New" Height="50">
+        <Button Content="Вход" Click="Btn_Vxod" Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                FontSize="36" HorizontalAlignment="Left" Margin="392,638,0,0" VerticalAlignment="Top"
+                Width="130" FontFamily="Courier New" Height="50">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -26,7 +28,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="686,638,0,0" VerticalAlignment="Top" Width="140"
+        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack"
+                FontSize="36" HorizontalAlignment="Left" Margin="686,638,0,0" VerticalAlignment="Top" Width="140"
                 FontFamily="Courier New" Height="50">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -35,12 +38,20 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Вход в панель администратора" FontSize="46" HorizontalAlignment="Left" Margin="178,364,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Black" FontStyle="Oblique"/>
-        <TextBox x:Name="tbLog" HorizontalAlignment="Left" Margin="394,456,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="428" FontSize="36" Height="52" FontFamily="Courier New"/>
-        <PasswordBox x:Name="tbPas" HorizontalAlignment="Left" Margin="392,558,0,0" VerticalAlignment="Top" Width="434" FontSize="36" Height="52" FontFamily="Courier New"/>
-        <Label Content="Логин" FontSize="36" HorizontalAlignment="Left" Margin="250,450,0,0" VerticalAlignment="Top" FontFamily="Courier New"/>
-        <Label Content="Пароль" FontSize="36" HorizontalAlignment="Left" Margin="250,560,0,0" VerticalAlignment="Top" FontFamily="Courier New"/>
-        <Image HorizontalAlignment="Left" Height="296" Margin="309,6,0,0" VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
+        <Label Content="Вход в панель администратора" FontSize="46" HorizontalAlignment="Left" 
+               Margin="178,364,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Black"
+               FontStyle="Oblique"/>
+        <TextBox x:Name="tbLog" HorizontalAlignment="Left" Margin="394,456,0,0" 
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="428"
+                 FontSize="36" Height="52" FontFamily="Courier New"/>
+        <PasswordBox x:Name="tbPas" HorizontalAlignment="Left" Margin="392,558,0,0"
+                     VerticalAlignment="Top" Width="434" FontSize="36" Height="52" FontFamily="Courier New"/>
+        <Label Content="Логин" FontSize="36" HorizontalAlignment="Left"
+               Margin="250,450,0,0" VerticalAlignment="Top" FontFamily="Courier New"/>
+        <Label Content="Пароль" FontSize="36" HorizontalAlignment="Left" 
+               Margin="250,560,0,0" VerticalAlignment="Top" FontFamily="Courier New"/>
+        <Image HorizontalAlignment="Left" Height="296" Margin="309,6,0,0" 
+               VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
 
     </Grid>
 </Page>

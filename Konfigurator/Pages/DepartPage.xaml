@@ -18,7 +18,8 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListView x:Name="listview"  Height="719" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="#FF111211" VerticalAlignment="Top"   FontSize="36" FontFamily="Courier New" Margin="10,56,563,0" >
+        <ListView x:Name="listview"  Height="719" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="#FF111211" 
+                  VerticalAlignment="Top"   FontSize="36" FontFamily="Courier New" Margin="10,56,563,0" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Подразделение">
@@ -32,9 +33,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="tbDep" HorizontalAlignment="Left" Margin="550,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="539" Height="198" FontFamily="Courier New" FontSize="36"/>
+        <TextBox x:Name="tbDep" HorizontalAlignment="Left" Margin="550,334,0,0" TextWrapping="Wrap" Text=""
+                 VerticalAlignment="Top" Width="539" Height="198" FontFamily="Courier New" FontSize="36"/>
 
-        <Button Background="#FF00C2C5" BorderThickness="2,2,2,2" Content="Сохранить" Click="AddEditDepar_Click" HorizontalAlignment="Left" Margin="553,540,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" Height="52" Width="259" >
+        <Button Background="#FF00C2C5" BorderThickness="2,2,2,2" Content="Сохранить" Click="AddEditDepar_Click" 
+                HorizontalAlignment="Left" Margin="553,540,0,0" VerticalAlignment="Top" FontFamily="Courier New"
+                FontSize="36" Height="52" Width="259" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -42,11 +46,20 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Перечень подразделений" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Добавление/редактирование подразделений" HorizontalAlignment="Left" Margin="528,135,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" Height="122" Width="547" FontStyle="Italic"/>
-        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Наименование подразделения" HorizontalAlignment="Left" Margin="511,275,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" Height="91" Width="616"/>
-        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="*Для редактирование нажмите на строку,которую хотите отредактировать" HorizontalAlignment="Left" Margin="533,599,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" FontStyle="Italic" Height="166" Width="545"/>
-        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="947,731,0,0" VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52">
+        <Label Content="Перечень подразделений" HorizontalAlignment="Center" VerticalAlignment="Top" 
+               FontSize="48" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Добавление/редактирование подразделений"
+                   HorizontalAlignment="Left" Margin="528,135,0,0" VerticalAlignment="Top" FontSize="36" 
+                   FontFamily="Courier New" Height="122" Width="547" FontStyle="Italic"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Наименование подразделения" 
+                   HorizontalAlignment="Left" Margin="511,275,0,0" VerticalAlignment="Top" FontSize="36"
+                   FontFamily="Courier New" Height="91" Width="616"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="*Для редактирование нажмите на строку,которую хотите отредактировать"
+                   HorizontalAlignment="Left" Margin="533,599,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Courier New" 
+                   FontStyle="Italic" Height="166" Width="545"/>
+        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left" Margin="947,731,0,0" 
+                VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -54,7 +67,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Background="#FF00C2C5" BorderThickness="2,2,2,2" Content="Удалить" Click="DelDepar_Click" HorizontalAlignment="Left" Margin="885,540,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="36" Height="52" Width="201" Foreground="Red" FontWeight="Bold" >
+        <Button Background="#FF00C2C5" BorderThickness="2,2,2,2" Content="Удалить" Click="DelDepar_Click"
+                HorizontalAlignment="Left" Margin="885,540,0,0" VerticalAlignment="Top" FontFamily="Courier New"
+                FontSize="36" Height="52" Width="201" Foreground="Red" FontWeight="Bold" >
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>

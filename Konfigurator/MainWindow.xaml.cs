@@ -26,8 +26,7 @@ namespace Konfigurator
         {
             InitializeComponent();
             FramMain.Navigate(new GlavPage());
-            UserWindow userWindow=new UserWindow();
-            userWindow.Close();
+            
         }
     }
 }

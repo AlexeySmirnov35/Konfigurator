@@ -18,23 +18,30 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" Height="622"  BorderBrush="#FF111211" VerticalAlignment="Center"   FontSize="24" FontFamily="Courier New" HorizontalAlignment="Center" Width="780" >
+        <ListView x:Name="listview"  MouseDoubleClick="SoftwareListView_MouseDoubleClick"
+                  Height="622"  BorderBrush="#FF111211" VerticalAlignment="Center" 
+                  FontSize="24" FontFamily="Courier New" HorizontalAlignment="Center" Width="780" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Программа">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding SoftwareName}"  TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                                <TextBlock Text="{Binding SoftwareName}"  TextWrapping="Wrap" 
+                                           TextAlignment="Center"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock HorizontalAlignment="Left" Margin="378,9,0,0" TextWrapping="Wrap" Text="Перечень ПО" VerticalAlignment="Top" FontFamily="Courier New" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBlock HorizontalAlignment="Left" Margin="6,83,0,0" TextWrapping="Wrap" Text="Поиск:" VerticalAlignment="Top" FontFamily="Courier New" FontSize="48"/>
-        <TextBox x:Name="tbox_Search" HorizontalAlignment="Left" TextChanged="Tbox_Search" Margin="179,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="755" Height="58" FontFamily="Courier New" FontSize="24"/>
-        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack" FontSize="36" HorizontalAlignment="Left"
+        <TextBlock HorizontalAlignment="Left" Margin="378,9,0,0" TextWrapping="Wrap" Text="Перечень ПО"
+                   VerticalAlignment="Top" FontFamily="Courier New" FontSize="48" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="6,83,0,0" TextWrapping="Wrap" Text="Поиск:"
+                   VerticalAlignment="Top" FontFamily="Courier New" FontSize="48"/>
+        <TextBox x:Name="tbox_Search" HorizontalAlignment="Left" TextChanged="Tbox_Search"
+                 Margin="179,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="755" Height="58" FontFamily="Courier New" FontSize="24"/>
+        <Button Content="Назад" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack"
+                FontSize="36" HorizontalAlignment="Left"
             Margin="943,842,0,0" VerticalAlignment="Top" Width="146" FontFamily="Courier New" Height="52">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

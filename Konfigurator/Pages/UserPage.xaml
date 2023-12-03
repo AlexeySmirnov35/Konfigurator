@@ -18,9 +18,12 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Панель пользователя" HorizontalAlignment="Left" Margin="248,204,0,0" VerticalAlignment="Top" FontSize="55" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
-        <Button Content="База знаний" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left"
-                Margin="206,500,0,0" VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New" Click="Button_Click">
+        <Label Content="Панель пользователя" HorizontalAlignment="Left" Margin="254,360,0,0"
+               VerticalAlignment="Top" FontSize="55" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic"/>
+        <Button Content="База знаний" Background="#FF00C2C5" BorderThickness="2,2,2,2" 
+                HorizontalAlignment="Left"
+                Margin="208,644,0,0" VerticalAlignment="Top" Height="90" Width="340" 
+                FontSize="36" FontFamily="Courier New" Click="Button_Click">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -28,7 +31,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="613,353,0,0"
+        <Button Content="Журнал заявок" Click="Btn_Jornul_Click" Background="#FF00C2C5" 
+                BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="615,497,0,0"
                 VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -37,8 +41,10 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Создать заявку" Click="Btn_AddRequest" Background="#FF00C2C5" BorderThickness="2,2,2,2"  HorizontalAlignment="Left"
-                    Margin="206,353,0,0" VerticalAlignment="Top" Height="90" Width="340" FontSize="36" FontFamily="Courier New">
+        <Button Content="Создать заявку" Click="Btn_AddRequest" Background="#FF00C2C5"
+                BorderThickness="2,2,2,2"  HorizontalAlignment="Left"
+                    Margin="208,497,0,0" VerticalAlignment="Top" Height="90" 
+                Width="340" FontSize="36" FontFamily="Courier New">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF80FD09"/>
@@ -46,7 +52,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" Background="#FF00C2C5" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="612,500,0,0" 
+        <Button Content="Назад" Click="Btn_GoBack" FontSize="36" Background="#FF00C2C5"
+                BorderThickness="2,2,2,2" HorizontalAlignment="Left" Margin="614,644,0,0" 
                 VerticalAlignment="Top" Width="340" FontFamily="Courier New" Height="90">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,6 +62,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <Image HorizontalAlignment="Left" Height="296" Margin="308,10,0,0"
+               VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
 
     </Grid>
 </Page>

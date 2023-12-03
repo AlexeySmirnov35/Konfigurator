@@ -19,7 +19,9 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid x:Name="print" Margin="0,0,0,120">
-            <ListView x:Name="listViewReq"  MouseDoubleClick="SoftwareListView_MouseDoubleClick" FontFamily="Courier New" FontSize="20" Background="White" BorderBrush="Black" Padding="1,1,1,1" Height="845" Margin="2,35,25,0" VerticalAlignment="Top">
+            <ListView x:Name="listViewReq"  MouseDoubleClick="SoftwareListView_MouseDoubleClick"
+                      FontFamily="Courier New" FontSize="20" Background="White"
+                      BorderBrush="Black" Padding="1,1,1,1" Height="845" Margin="2,35,25,0" VerticalAlignment="Top">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn  Header="№">
@@ -70,7 +72,9 @@
                 </ListView.View>
             </ListView>
         </Grid>
-        <Button Content="Экспорт PDF"  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Create_Pdf_Click" HorizontalAlignment="Left"
+        <Button Content="Экспорт PDF"  Background="#FF00C2C5"
+                BorderThickness="2,2,2,2" Click="Create_Pdf_Click"
+                HorizontalAlignment="Left"
                 Margin="743,894,0,0" VerticalAlignment="Top" FontFamily="Courier New" FontSize="22" Height="30" Width="176">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -79,8 +83,12 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="2,884,0,0" TextWrapping="Wrap" Text="Для печати только определенной заявки,дважды нажмите на нее" VerticalAlignment="Top" Height="44" Width="302" FontSize="16" FontFamily="Courier New"/>
-        <Button Content="Назад"  Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_GoBack" FontSize="24" HorizontalAlignment="Left" Margin="992,896,0,0" VerticalAlignment="Top" 
+        <TextBlock HorizontalAlignment="Left" Margin="2,884,0,0" TextWrapping="Wrap"
+                   Text="Для печати только определенной заявки,дважды нажмите на нее" VerticalAlignment="Top" 
+                   Height="44" Width="302" FontSize="16" FontFamily="Courier New"/>
+        <Button Content="Назад"  Background="#FF00C2C5" BorderThickness="2,2,2,2"
+                Click="Btn_GoBack" FontSize="24" HorizontalAlignment="Left"
+                Margin="992,896,0,0" VerticalAlignment="Top" 
                 Width="94" FontFamily="Courier New" Height="31">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

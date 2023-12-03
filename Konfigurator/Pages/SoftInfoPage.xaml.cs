@@ -63,8 +63,6 @@ namespace Konfigurator.Pages
                 errors.AppendLine("Укажите версию!");
             if (string.IsNullOrWhiteSpace(_software.UpdateDescription))
                 errors.AppendLine("Напишите описание обновления!");
-
-            // Check the validity of the URL
             if (!Uri.TryCreate(_software.WebUrl, UriKind.Absolute, out var uriResult) || (uriResult.Scheme != Uri.UriSchemeHttp && uriResult.Scheme != Uri.UriSchemeHttps))
                 errors.AppendLine("Укажите корректную ссылку на документацию!");
 

@@ -18,7 +18,9 @@
                 <GradientStop Color="#AEEEEE" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Войти в панель администратора" Click="Btn_Admin_Click" Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="36" HorizontalAlignment="Left" Margin="229,390,0,0" VerticalAlignment="Top" 
+        <Button Content="Войти в панель администратора" Click="Btn_Admin_Click"
+                Background="#FF00C2C5" BorderThickness="2,2,2,2" FontSize="36"
+                HorizontalAlignment="Left" Margin="229,390,0,0" VerticalAlignment="Top" 
                 Height="110" Width="666"  FontFamily="Courier New" FontWeight="Bold">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -27,7 +29,9 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="Войти в панель пользователя" Background="#FF00C2C5" BorderThickness="2,2,2,2" Click="Btn_User_Click" FontSize="36" HorizontalAlignment="Left" Margin="254,560,0,0" VerticalAlignment="Top" 
+        <Button Content="Войти в панель пользователя" Background="#FF00C2C5" 
+                BorderThickness="2,2,2,2" Click="Btn_User_Click" FontSize="36"
+                HorizontalAlignment="Left" Margin="254,560,0,0" VerticalAlignment="Top" 
                 Height="110" Width="616" FontFamily="Courier New" FontWeight="Bold">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -36,8 +40,11 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Label Content="Конфигуратор" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontStyle="Italic" Margin="308,279,0,0"/>
-        <Image HorizontalAlignment="Left" Height="296" Margin="330,0,0,0" VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
+        <Label Content="Конфигуратор" FontSize="72" HorizontalAlignment="Left"
+               VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold"
+               FontStyle="Italic" Margin="308,279,0,0"/>
+        <Image HorizontalAlignment="Left" Height="296" Margin="330,0,0,0"
+               VerticalAlignment="Top" Width="504" Source="/img/krl-transformed.png"/>
 
     </Grid>
 </Page>
